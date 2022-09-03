@@ -21,7 +21,7 @@
     ```
 3. 构建静态文件
     ```sh 
-    $ reveal-md main.md --static site
+    $ reveal-md main.md --static site --assets-dir assets
     ```
     - 生成 pdf 版：在 url 后面加上 `?print-pdf` 使用浏览器打印
 4. 部署
