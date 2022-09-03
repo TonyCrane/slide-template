@@ -1,6 +1,6 @@
 # TonyCrane's Slide Template
 
-一个 [reveal-md](https://github.com/webpro/reveal-md) 的简单主题，部分参考了 [jyywiki](jyywiki.cn) 的主题。（应该会随着我的使用不断更新）
+一个 [reveal-md](https://github.com/webpro/reveal-md) 的简单主题，部分参考了 [jyywiki](https://jyywiki.cn) 的主题。（应该会随着我的使用不断更新）
 
 预览：https://slides.tonycrane.cc/RevealmdTemplate
 
