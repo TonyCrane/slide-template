@@ -11,6 +11,9 @@
 
 ## 构建与部署
 
+<details>
+<summary>旧版指南</summary>
+
 1. 安装 reveal-md
     ```sh 
     $ npm install -g reveal-md
@@ -25,8 +28,26 @@
     ```
     - 生成 pdf 版：在 url 后面加上 `?print-pdf` 使用浏览器打印
 4. 部署
-    - 很蠢的一个实现，总之就是用 Action 把 site 文件夹中的内容复制到我的另一个私有 repo 中，然后在那个 repo 里部署 GitHub Pages（以后应该会实现在 Action 中构建并部署，~~咕咕咕~~）
+    - 很蠢的一个实现，总之就是用 Action 把 site 文件夹中的内容复制到我的另一个私有 repo 中，然后在那个 repo 里部署 GitHub Pages
     - 构建出 site 文件夹后 commit & push，message 需要以 `[deploy]` 开头
+
+</details>
+
+使用 Makefile 来辅助预览与构建
+
+1. 安装 reveal-md
+    ```sh 
+    $ npm install -g reveal-md
+    ```
+2. 开启本地实时预览
+    ```sh
+    $ make  # or make live
+    ```
+3. 构建静态文件
+    ```sh
+    $ make build
+    ```
+    - 生成 pdf 版：在 url 后面加上 `?print-pdf` 使用浏览器打印
 
 ## 用法
 
