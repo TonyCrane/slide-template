@@ -226,3 +226,7 @@ html.print-pdf .reveal pre code {
 .MathJax .math {
   font-size: 80%;
 }
+
+.katex {
+  font-size: 1em;
+}
