@@ -96,6 +96,9 @@
       Reveal.on('overviewhidden', event => {
         document.querySelector(".backgrounds").setAttribute("style", document.querySelector(".slides").style.cssText);
       });
+      Reveal.on('resize', event => {
+        document.querySelector(".backgrounds").setAttribute("style", document.querySelector(".slides").style.cssText);
+      });
     </script>
   </body>
 </html>
