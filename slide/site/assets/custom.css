@@ -226,3 +226,26 @@ html.print-pdf .reveal pre code {
 .MathJax .math {
   font-size: 80%;
 }
+
+.katex {
+  font-size: 1em;
+}
+
+.reveal-viewport.reveal-scroll .slide-background {
+  top: 50% !important;
+  left: 50% !important;
+  width: var(--slide-width) !important;
+  height: var(--slide-height) !important;
+  transform: scale(var(--slide-scale)) translate(-50%, -50%) !important;
+  transform-style: flat !important;
+  transform-origin: 0 0 !important;
+}
+
+.reveal-viewport.reveal-scroll section[data-markdown] {
+  border: 1.5px #ddd solid;
+  border-radius: 7px;
+}
+
+.reveal-viewport.reveal-scroll .slides {
+  border: none;
+}

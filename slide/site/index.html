@@ -16,7 +16,10 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template">
+      <div class="slides">
+        <section data-markdown data-separator="<!--s-->" data-separator-vertical="<!--v-->">
+          <textarea data-template>
+            
 
 <div class="middle center">
 <div style="width: 100%">
@@ -30,7 +33,7 @@ By [@TonyCrane](https://github.com/TonyCrane)
 </div>
 </div>
 
-</script></section><section ><section data-markdown><script type="text/template">
+<!--s-->
 
 <div class="middle center">
 <div style="width: 100%">
@@ -43,7 +46,7 @@ By [@TonyCrane](https://github.com/TonyCrane)
 </div>
 
 
-</script></section><section data-markdown><script type="text/template">
+<!--v-->
 
 ## 标题
 
@@ -65,7 +68,7 @@ fn main() {
 
 1. 有序
 
-</script></section><section data-markdown><script type="text/template">
+<!--v-->
 
 ## 标题
 
@@ -83,7 +86,7 @@ fn main() {
 |这是一个|一些内容|...|
 |普通表格|...|...|
 
-</script></section></section><section ><section data-markdown><script type="text/template">
+<!--s-->
 
 <div class="middle center">
 <div style="width: 100%">
@@ -93,7 +96,7 @@ fn main() {
 </div>
 </div>
 
-</script></section><section data-markdown><script type="text/template">
+<!--v-->
 
 ## 多列布局
 
@@ -152,9 +155,11 @@ class MyClass:
 ```
 
 </div>
-</div></script></section></section></div>
-    </div>
-
+</div>
+          </textarea>
+        </section>
+      </div>
+    </div>   
     <script src="./dist/reveal.js"></script>
 
     <script src="./plugin/markdown/markdown.js"></script>
@@ -189,21 +194,32 @@ class MyClass:
           RevealHighlight,
           RevealZoom,
           RevealNotes,
-          RevealMath
+          RevealMath.KaTeX
         ]
       };
 
       // options from URL query string
       var queryOptions = Reveal().getQueryHash() || {};
 
-      var options = extend(defaultOptions, {"transition":"slide","transitionSpeed":"fast","center":false,"slideNumber":"c/t","width":1000}, queryOptions);
+      var options = extend(defaultOptions, {"transition":"slide","transitionSpeed":"fast","center":false,"slideNumber":"c/t","width":1000,"_":["main.md"],"scripts":"https://cdn.tonycrane.cc/heti/heti.js,heti_worker.js","template":"template.html","static":"../site","assets-dir":"assets","assetsDir":"assets"}, queryOptions);
     </script>
 
     <script src="https://cdn.tonycrane.cc/heti/heti.js"></script>
     <script src="./assets/heti_worker.js"></script>
 
     <script>
-      Reveal.initialize(options);
+      Reveal.initialize(options).then(() => {
+        document.querySelector(".backgrounds").setAttribute("style", document.querySelector(".slides").style.cssText);
+      });
+      Reveal.on('overviewshown', event => {
+        document.querySelector(".backgrounds").setAttribute("style", "");
+      });
+      Reveal.on('overviewhidden', event => {
+        document.querySelector(".backgrounds").setAttribute("style", document.querySelector(".slides").style.cssText);
+      });
+      Reveal.on('resize', event => {
+        document.querySelector(".backgrounds").setAttribute("style", document.querySelector(".slides").style.cssText);
+      });
     </script>
   </body>
 </html>
